@@ -101,8 +101,9 @@ set https_proxy=socks5://127.0.0.1:1080
 ***
 
 #### Android 客户端
-在这个页面[下载客户端](https://github.com/txthinking/brook/releases)，选择 **.apk** 格式文件进行下载并安装。
+在[这个页面](https://github.com/txthinking/brook/releases)下载客户端，选择 **.apk** 格式文件进行下载并安装。
 安装后填写相应参数，要注意的就是**服务器参数**那里，格式为 **IP:端口**
+![Cliect]({{site.url}}/img/post-img-proxy-android.jpg?raw=true)
 
 ***
 
