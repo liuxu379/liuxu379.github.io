@@ -50,11 +50,11 @@ tags:
 
 ``` mermaid
 graph TD
-	A(Redis-1-Master)
-	A --> B[Redis-1-Slave]
-	A --> C[Redis-2-Master]
-	A --> D[Redis-3-Master]
-	C --> E[Redis-2-Slave]
-	D --> F[Redis-3-Slave]
+  A(Redis-1-Master)
+  A --> B[Redis-1-Slave]
+  A --> C[Redis-2-Master]
+  A --> D[Redis-3-Master]
+  C --> E[Redis-2-Slave]
+  D --> F[Redis-3-Slave]
 ```
 
