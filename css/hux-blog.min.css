@@ -152,7 +152,7 @@ body {
     line-height: 1.7;
     font-size: 16px;
     color: #404040;
-    overflow-x: hidden
+    overflow: hidden
 }
 
 p {
@@ -183,7 +183,7 @@ a img:hover, a img:focus {
 }
 
 article {
-    overflow-x: hidden
+    overflow: hidden
 }
 
 blockquote {
