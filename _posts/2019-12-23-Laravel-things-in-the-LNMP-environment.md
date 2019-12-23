@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Laravel things in the LNMP environment
+title:      LNMP 
 subtitle:   
 date:       2019-12-23
 author:     liuxu379
