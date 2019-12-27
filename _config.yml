@@ -4,9 +4,9 @@ SEOTitle: Blog
 header-img: img/post-bg-desk-1.jpg
 email: cyntec379@gmail.com
 description: ""
-keyword: "liuxu379"
-#url: "http://liuxu379.github.io"          # your host, for absolute URL
-url: "https://www.cyntec.cn"          # your host, for absolute URL
+keyword: "liuxu379,cyntec379"
+url: "http://liuxu379.github.io"          # your host, for absolute URL
+#url: "https://www.cyntec.cn"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Sidebar settings
@@ -56,11 +56,11 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-disqus_username: liuxu379
+#disqus_username: liuxu379
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论
+  enable: true    #是否开启Gitalk评论
   clientID: 7ab53e4d8b521fc5f5a4                            #生成的clientID
   clientSecret: 829531d72f898ff9cac014d115d4a6d0efa6f96a    #生成的clientSecret
   repo: liuxu379.github.io    #仓库名称
