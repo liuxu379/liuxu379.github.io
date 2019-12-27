@@ -100,5 +100,8 @@ friends: [
 {
         title: "大海",
         href: "http://www.ypyunedu.com/"
+    },{
+        title: "OneDrive",
+        href: "https://file.cyntec.cn/"
     }
 ]
