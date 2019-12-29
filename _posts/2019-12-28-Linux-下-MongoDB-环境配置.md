@@ -71,8 +71,8 @@ sudo rm -r /var/lib/mongodb
 
 ***
 ## 管理
-启动：`sudo service mongod start`
-状态：`sudo service mongod status`
-停止：`sudo service mongod stop`
-重启：`sudo service mongod restart`
-连接：`mongo`
+> 启动：`sudo service mongod start`
+> 状态：`sudo service mongod status`
+> 停止：`sudo service mongod stop`
+> 重启：`sudo service mongod restart`
+> 连接：`mongo`
