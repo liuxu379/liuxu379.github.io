@@ -56,17 +56,17 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-#disqus_username: liuxu379
+disqus_username: liuxu379
 
 # Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: 7ab53e4d8b521fc5f5a4                            #生成的clientID
-  clientSecret: 829531d72f898ff9cac014d115d4a6d0efa6f96a    #生成的clientSecret
-  repo: liuxu379.github.io    #仓库名称
-  owner: liuxu379    #github用户名
-  admin: liuxu379
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+#gitalk:
+  #enable: true    #是否开启Gitalk评论
+  #clientID: 7ab53e4d8b521fc5f5a4                            #生成的clientID
+  #clientSecret: 829531d72f898ff9cac014d115d4a6d0efa6f96a    #生成的clientSecret
+  #repo: liuxu379.github.io    #仓库名称
+  #owner: liuxu379    #github用户名
+  #admin: liuxu379
+  #distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 # 统计
