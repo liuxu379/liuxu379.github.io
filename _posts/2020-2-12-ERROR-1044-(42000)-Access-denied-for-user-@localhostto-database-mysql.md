@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      ERROR 1044 (42000): Access denied for user ''@'localhost' to database 'mysql'
+title:      Mysql 报错 ERROR 1044 (42000)
 subtitle:   
 date:       2020-2-12
 author:     liuxu379
