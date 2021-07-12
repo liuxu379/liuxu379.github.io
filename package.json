@@ -21,7 +21,8 @@
         "cryptiles": ">=4.1.2",
         "hawk": ">=3.1.3",
         "mime": ">=1.4.1",
-        "hoek": ">=4.2.1"
+        "hoek": ">=4.2.1",
+        "request": ">=2.68.0"
     },
     "scripts": {
         "preview": "cd _site; python -m SimpleHTTPServer 8020",
