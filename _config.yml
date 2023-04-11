@@ -1,10 +1,10 @@
 # Site settings
-title: Blog
-SEOTitle: Blog
+title:
+SEOTitle:
 header-img: img/post-bg-desk-1.jpg
-email: cyntec379@gmail.com
+email: xuuuu.liu@gmail.com
 description: ""
-keyword: "liuxu379,cyntec379"
+keyword: "liuxu379"
 url: "https://liuxu379.github.io"          # your host, for absolute URL
 url: "https://cyntec.cn"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -100,13 +100,5 @@ friends: [
 {
         title: "大海",
         href: "http://www.ypyunedu.com/"
-    },
-{
-      title: "OneDrive",
-      href: "https://file.cyntec.cn/",
-  },
-  {
-    title: "Teambition直链",
-    href: "https://pan.cyntec.cn/",
-  },
+    }
 ]
