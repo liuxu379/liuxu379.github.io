@@ -19,6 +19,7 @@ tags:
 
 ## 删除某些字符串开头的字段
 
+PHP 代码
 ```php
 $documents = PuDao::query()->where()->get();
 
@@ -38,6 +39,16 @@ foreach ($documents as $doc) {
             ->update(['$unset' => $unsetFields]); // 使用 MongoDB 的 $unset 操作符
     }
 }
+```
+
+MongoDB 命令
+
+```
+db.xinyongsuanli.update(
+   { "rong360_52_requestId": { $exists: true } }, // 匹配所有包含该字段的文档
+   { $unset: { "rong360_52_requestId": 1 } },    // 删除该字段
+   { multi: true }                         // 应用到所有匹配的文档
+)
 ```
 
 
