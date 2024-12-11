@@ -10,7 +10,7 @@ layout: default
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('https://source.unsplash.com/1900x870/daily?nature,landscape&sig={% if page.date %}{{page.date | date: "%s"}}{% else %}{{site.time | date: "%s"}}{% endif %}');
+        background-image: url('https://picsum.photos/seed/{% if page.date %}{{page.date | date: "%Y%m%d"}}{% else %}{{site.time | date: "%Y%m%d"}}{% endif %}/1900/500');
         height: 500px;
         background-size: cover;
         background-position: center;
