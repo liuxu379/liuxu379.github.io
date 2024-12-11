@@ -526,7 +526,7 @@ pre code {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    margin-bottom: 0,
+    margin-bottom: 0;
     height: 500px
 }
 
