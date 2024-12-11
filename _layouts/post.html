@@ -11,7 +11,7 @@ layout: default
     header.intro-header{
         position: relative;
         background-image: url('https://source.unsplash.com/1900x870/daily?nature,landscape&sig={% if page.date %}{{page.date | date: "%s"}}{% else %}{{site.time | date: "%s"}}{% endif %}');
-        height: 870px;
+        height: 500px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -19,7 +19,7 @@ layout: default
 
     @media (max-width: 768px) {
         header.intro-header {
-            height: 450px;
+            height: 350px;
         }
     }
 
