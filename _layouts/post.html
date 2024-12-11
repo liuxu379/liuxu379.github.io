@@ -10,7 +10,17 @@ layout: default
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+        background-image: url('https://picsum.photos/1900/870?random={% if page.date %}{{page.date | date: "%s"}}{% else %}{{site.time | date: "%s"}}{% endif %}');
+        height: 870px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    @media (max-width: 768px) {
+        header.intro-header {
+            height: 450px;
+        }
     }
 
     {% if page.header-mask %}
