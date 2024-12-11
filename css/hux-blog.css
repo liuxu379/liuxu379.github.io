@@ -499,8 +499,10 @@ pre code {
   background: no-repeat center center;
   background-color: #808080;
   background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
-  height: 500px;
+  -o-background-size: cover;
   margin-bottom: 0px;
   /* 0 on mobile, modify by Hux */
 }
