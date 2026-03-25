@@ -3,7 +3,7 @@
     "title": "Blog",
     "author": "liuxu379 <liuxu379@gmail.com>",
     "version": "1.0.0",
-    "homepage": "https://liuxu379.github.io",
+    "homepage": "https://hsbc.cc.cd",
     "repository": {
         "type": "git",
         "url": "https://github.com/liuxu379/liuxu379.github.io"
@@ -26,12 +26,11 @@
         "tunnel-agent": ">=0.6.0"
     },
     "scripts": {
-        "preview": "cd _site; python -m SimpleHTTPServer 8020",
-        "py3view": "cd _site; python3 -m http.server 8020",
-        "watch": "grunt watch & npm run preview & jekyll serve -w",
-        "py3wa": "grunt watch & npm run py3view & jekyll serve -w",
-        "boil": "git push boilerplate boilerplate:master",
-        "push": "git push origin master --tag",
-        "cafe": "git co gitcafe-pages; git merge master; git push gitcafe gitcafe-pages:gitcafe-pages --tag; git co master;"
+        "assets": "grunt",
+        "assets:watch": "grunt watch",
+        "preview": "python3 -m http.server 8020 --directory _site",
+        "build": "bundle exec jekyll build",
+        "serve": "bundle exec jekyll serve --livereload",
+        "audit:posts": "ruby scripts/audit_posts.rb"
     }
 }

@@ -34,3 +34,8 @@ Temporary Items
 # debug file
 _site
 /.idea
+node_modules/
+.bundle/
+.jekyll-cache/
+.sass-cache/
+vendor/bundle/

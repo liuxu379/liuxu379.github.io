@@ -10,7 +10,7 @@ layout: default
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('https://api.1314.cool/bingimg');
+        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         height: 500px;
         background-size: cover;
         background-position: center;
@@ -44,12 +44,9 @@ layout: default
                         {% endfor %}
                     </div>
                     <h1>{{ page.title }}</h1>
-                    {% comment %}
-                        always create a h2 for keeping the margin , Hux
-                    {% endcomment %}
-                    {% comment %} if page.subtitle {% endcomment %}
+                    {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
-                    {% comment %} endif {% endcomment %}
+                    {% endif %}
                     <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
                 </div>
             </div>
@@ -84,7 +81,25 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
                 {{ content }}
-                <!-- 其他内容保持不变... -->
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" title="{{ page.previous.title }}">
+                            Previous<br>
+                            <span>{{ page.previous.title }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" title="{{ page.next.title }}">
+                            Next<br>
+                            <span>{{ page.next.title }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
 
             <!-- Sidebar Container -->
@@ -131,7 +146,7 @@ layout: default
 </script>
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
-    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+    async("https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
         // anchors.options = {
         //   visible: 'always',
         //   placement: 'right',

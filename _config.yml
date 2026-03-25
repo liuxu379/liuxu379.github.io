@@ -1,18 +1,20 @@
 # Site settings
-title:
-SEOTitle:
+title: liuxu379
+SEOTitle: liuxu379 Blog
 header-img: img/post-bg-desk-1.jpg
+lang: zh-CN
 
 email: xuuuu.liu@gmail.com
-description: ""
-keyword: ""
-url: "https://liuxu379.github.io"          # your host, for absolute URL
+description: "技术笔记、故障排查与工具记录"
+keyword: "liuxu379, blog, 技术笔记, Linux, PHP, Nginx, 1Panel, OpenClaw"
+url: "https://hsbc.cc.cd"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/liuxu379/liuxu379.github.io"
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "The more I learn, the more I realize how much I don't know."
-sidebar-avatar:       # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar_g.jpg       # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -31,7 +33,7 @@ twitter_username:   liuxu379
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","package-lock.json","Gemfile","Gemfile.lock","README.md","LICENSE","scripts",".github",".ruby-version"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
@@ -57,17 +59,6 @@ kramdown:
 # 评论系统
 # Disqus（https://disqus.com/）
 #disqus_username: liuxu379
-
-# Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: 7ab53e4d8b521fc5f5a4                            #生成的clientID
-  clientSecret: 829531d72f898ff9cac014d115d4a6d0efa6f96a    #生成的clientSecret
-  repo: liuxu379.github.io    #仓库名称
-  owner: liuxu379    #github用户名
-  admin: liuxu379
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
-
 
 # 统计
 

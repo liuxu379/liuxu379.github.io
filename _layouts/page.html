@@ -8,10 +8,9 @@ layout: default
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
-                    <h1></h1>
-                    <!-- <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1> -->
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
                     <!--<hr class="small">-->
-                    <span class="subheading">{{ page.description }}</span>
+                    <span class="subheading">{{ page.description | default: site.description }}</span>
                 </div>
             </div>
         </div>
@@ -40,7 +39,7 @@ layout: default
                     <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
                     <div class="tags">
         				{% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                            {% if tag[1].size > site.featured-condition-size %}
                 				<a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
                                     {{ tag[0] }}
                                 </a>
@@ -89,7 +88,7 @@ layout: default
                     <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
                     <div class="tags">
                         {% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                            {% if tag[1].size > site.featured-condition-size %}
                                 <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
                                     {{ tag[0] }}
                                 </a>
@@ -105,7 +104,7 @@ layout: default
                     <div class="short-about">
                         {% if site.sidebar-avatar %}
                             <a href="{{ site.baseurl }}/about">
-                                <img src="{{site.sidebar-avatar}}"/>
+                                <img src="{{site.sidebar-avatar}}" alt="{{ site.title }} avatar" />
                             </a>
                         {% endif %}
                         {% if site.sidebar-about-description %}
@@ -126,7 +125,7 @@ layout: default
                             <!-- add jianshu add target = "_blank" to <a> by BY -->
                             {% if site.jianshu_username %}
                             <li>
-                                <a target="_blank" href="https://www.jianshu.com/u/{{ site.jianshu_username }}">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.jianshu.com/u/{{ site.jianshu_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa  fa-stack-1x fa-inverse">简</i>
@@ -136,7 +135,7 @@ layout: default
                             {% endif %}
                             {% if site.twitter_username %}
                             <li>
-                                <a href="https://twitter.com/{{ site.twitter_username }}">
+                                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/{{ site.twitter_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -146,7 +145,7 @@ layout: default
                             {% endif %}
                             {% if site.zhihu_username %}
                             <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa  fa-stack-1x fa-inverse">知</i>
@@ -156,7 +155,7 @@ layout: default
                             {% endif %}
                             {% if site.weibo_username %}
                             <li>
-                                <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
+                                <a target="_blank" rel="noopener noreferrer" href="https://weibo.com/{{ site.weibo_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
@@ -166,7 +165,7 @@ layout: default
                             {% endif %}
                             {% if site.facebook_username %}
                             <li>
-                                <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/{{ site.facebook_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -176,7 +175,7 @@ layout: default
                             {% endif %}
                             {% if site.github_username %}
                             <li>
-                                <a target="_blank" href="https://github.com/{{ site.github_username }}">
+                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/{{ site.github_username }}">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-github fa-stack-1x fa-inverse"></i>
