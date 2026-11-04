@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>iOS 资源目录 | LCSign 软件源</title>
+<meta name="description" content="LCSign 软件源与 iOS 应用下载资源目录">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{background:#0d1525;color:#edf3ff;font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",Arial,sans-serif;margin:0}
+main{max-width:1100px;margin:auto;padding:35px 20px 70px}header{display:flex;align-items:center;gap:12px;color:#9aaecb}h1{font-size:clamp(29px,5vw,44px);margin:45px 0 8px;line-height:1.2}h2{font-size:20px;margin:0 0 12px}p,.sub{color:#a4b6d3}
+.panel,.item{border-radius:16px;border:1px solid #33445f;background:#17253a;padding:20px;margin:20px 0}.links,.toolbar{display:flex;flex-wrap:wrap;gap:11px}.toolbar{margin:26px 0}
+button,input,select,.btn{color:#f0f5ff;background:#273b57;border:1px solid #4a5f80;border-radius:10px;font:inherit;padding:11px 14px}button{cursor:pointer}.btn{display:inline-block;text-decoration:none}a{color:#9dbfff}
+input{flex:1;min-width:220px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.item{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}.item b{overflow-wrap:anywhere}.item small{color:#b8c6dc}.item a{margin-top:auto}
+.pages{display:flex;align-items:center;justify-content:center;gap:12px;margin:25px 0}footer{color:#91a3bf;border-top:1px solid #33445f;padding-top:20px;margin-top:40px;font-size:13px}
+@media(max-width:580px){.grid{grid-template-columns:1fr}.toolbar>*{width:100%}}
+</style></head>
+<body><main>
+<header><strong>iOS 应用资源索引</strong><span>· GitHub Pages</span></header>
+<h1>应用资源，集中检索。</h1>
+<p>收录第三方 IPA / TIPA 资源目录。软件源保留原下载链接，不在本站存储安装包。</p>
+<section class="panel"><h2>LCSign 软件源</h2><div class="links">
+<button id="copy">复制完整软件源地址</button><a class="btn" href="appstore.json">查看主源 JSON</a><a class="btn" href="catalog.json">查看完整目录</a>
+</div><p>主源包含约 6,348 条应用记录。导入缓慢时可使用分卷源：</p><div id="shards" class="links"></div></section>
+<p id="count">正在加载目录…</p>
+<div class="toolbar"><input id="q" type="search" placeholder="搜索名称、版本或资源编号"><select id="fmt"><option value="">全部应用</option><option value="ipa">IPA</option><option value="tipa">TIPA</option></select></div>
+<p id="result"></p><div id="grid" class="grid"></div>
+<div class="pages"><button id="prev">上一页</button><span id="page">—</span><button id="next">下一页</button></div>
+<footer>链接来自原始资源清单，部分签名链接可能失效。资源授权、安全性及能否安装均未验证，使用前请核实来源与权利。</footer>
+</main>
+<script>
+const el=id=>document.getElementById(id),size=32;let all=[],match=[],page=0;
+for(let i=1;i<=14;i++){const a=document.createElement('a');a.className='btn';a.href='sources/part-'+String(i).padStart(2,'0')+'.json';a.textContent='第 '+i+' 分源';el('shards').append(a)}
+el('copy').onclick=async()=>{const url=new URL('appstore.json',location.href).href;try{await navigator.clipboard.writeText(url);el('copy').textContent='已复制'}catch(e){prompt('软件源 URL',url)}};
+function render(){const q=el('q').value.toLowerCase().trim(),f=el('fmt').value;match=all.filter(r=>(!f||r.format===f)&&(!q||[r.name,r.version,r.originalId].some(t=>String(t).toLowerCase().includes(q))));let pages=Math.max(1,Math.ceil(match.length/size));page=Math.min(page,pages-1);el('grid').replaceChildren();for(const r of match.slice(page*size,(page+1)*size)){const d=document.createElement('div');d.className='item';const b=document.createElement('b');b.textContent=r.name;const s=document.createElement('small');s.textContent='v'+r.version+' · '+r.format.toUpperCase()+' · ID '+r.originalId;const a=document.createElement('a');a.href=r.downloadURL;a.rel='noopener noreferrer';a.target='_blank';a.textContent='打开下载地址';d.append(b,s,a);el('grid').append(d)}el('result').textContent='找到 '+match.length+' 条记录';el('page').textContent=(page+1)+' / '+pages;el('prev').disabled=page===0;el('next').disabled=page+1===pages}
+el('q').oninput=()=>{page=0;render()};el('fmt').onchange=()=>{page=0;render()};el('prev').onclick=()=>{page--;render()};el('next').onclick=()=>{page++;render()};
+fetch('catalog.json').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{all=d.entries;el('count').textContent='共 '+all.length.toLocaleString()+' 条应用资源';render()}).catch(e=>el('count').textContent='目录加载失败：'+e.message);
+</script></body></html>
